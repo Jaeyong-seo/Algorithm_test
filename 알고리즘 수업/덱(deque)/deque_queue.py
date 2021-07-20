@@ -3,26 +3,28 @@ from collections import deque
 class Queue:
     def __init__(self, n):
         self.array = deque()
-        self.f_idx = 0
-        self.b_idx = 0
 
     def push(self, num):
-        self.array.append(10)
-        self.b_idx += 1
+        self.array.append(num)
 
     def pop(self):
-        last_val = self.array.pop()
-        self.b_idx -=1
+        if self.array:
+            return self.array.pop()
+        return -1
 
     def size(self):
+        return len(self.array)
 
     def empty(self):
-
-    def is_empty(self):
+        if self.array:
+            return 0
+        return -1
 
     def front(self):
+        return self.array[0]
 
     def back(self):
+        return self.array[-1]
 
 def run_cmd_with_queue(queue_obj, command):
     cmd_type = command[0]

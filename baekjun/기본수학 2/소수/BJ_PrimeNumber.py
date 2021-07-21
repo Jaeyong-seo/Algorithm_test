@@ -11,6 +11,7 @@ class PrimeNumber():
                     self.Divisor_list.append(n)
             if len(self.Divisor_list) == 2:
                 self.PrimeNum_list.append(num)
+        return self.PrimeNum_list
 
     def sum(self):
         return sum(self.PrimeNum_list)
@@ -24,14 +25,14 @@ class PrimeNumber():
         return 1
 
 
-M = int(input())
-N = int(input())
-
-PrimeNumber = PrimeNumber()
-PrimeNumber.search(M,N)
-
-if PrimeNumber.is_empty():
-    print(-1)
-else:
-    print(PrimeNumber.sum())
-    print(PrimeNumber.min())
+# M = int(input())
+# N = int(input())
+#
+# PrimeNumber = PrimeNumber()
+# PrimeNumber.search(M,N)
+#
+# if PrimeNumber.is_empty():
+#     print(-1)
+# else:
+#     print(PrimeNumber.sum())
+#     print(PrimeNumber.min())

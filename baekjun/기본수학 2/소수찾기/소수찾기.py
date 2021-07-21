@@ -11,4 +11,4 @@ def PrimeNumber_Cnt(array):
 
 times = int(input())
 num_list = list(map(int,input().split()))
-print( PrimeNumber_Cnt( num_list ))
+print( PrimeNumber_Cnt( num_list )수

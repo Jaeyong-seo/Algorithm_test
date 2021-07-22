@@ -4,10 +4,12 @@ while True:
     if sum(num_list) == 0:
         break
 
-    C = num_list.pop(num_list.index(max(num_list)))
-    AB = sum(map(lambda x:x**2,num_list))
+    num_list.sort()
 
-    if AB == (C**2):
+    C = num_list[-1] ** 2
+    AB = sum(map(lambda x:x**2,num_list[:2]))
+
+    if AB == C:
         print('right')
     else:
         print('wrong')

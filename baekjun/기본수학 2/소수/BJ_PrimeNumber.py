@@ -25,14 +25,13 @@ class PrimeNumber():
         return 1
 
 
-# M = int(input())
-# N = int(input())
-#
-# PrimeNumber = PrimeNumber()
-# PrimeNumber.search(M,N)
-#
-# if PrimeNumber.is_empty():
-#     print(-1)
-# else:
-#     print(PrimeNumber.sum())
-#     print(PrimeNumber.min())
+M = int(input())
+N = int(input())
+
+PrimeNumber().search(M,N)
+
+if PrimeNumber.is_empty():
+    print(-1)
+else:
+    print(PrimeNumber.sum())
+    print(PrimeNumber.min())

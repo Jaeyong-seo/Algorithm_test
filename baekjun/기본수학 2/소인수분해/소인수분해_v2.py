@@ -1,47 +1,45 @@
-def PrimeNum_Next(N):
-    number = N+1
+def Prime(N):
+  answer = []
+  check = [True] * (N+1)
 
-    while True:
-        for num in range(N+1,number+1):
-            Divisor_list = []
-            for n in range(1,num+1):
-                if num % n == 0:
-                    Divisor_list.append(n)
-            if len(Divisor_list) == 2:
-                return num
-        number += 1
+  for i in range(2, int(N**0.5)+1):
+    if check[i]:
+      for j in range(i+i,N+1,i):
+        check[j] = False
 
-def PrimeFactorization(number):
-    Factor_list = []
-    f_check = 0
-    p_check = 2
+  for i in range(2,len(check)):
+    if check[i]:
+      answer.append(i)
+
+  return answer
 
 
-    Factor_list.append(number)
+def PrimeNumFactorization(N):
+  PrimeNum_list = []
+  answer_list = []
 
-    while True:
-        print(Factor_list[-1])
-        if Factor_list[-1]  == p_check:
-            break
-        else:
-            while True:
-                #print('list', Factor_list)
-                #print('num', f_check)
-                A, B = divmod(Factor_list[f_check], p_check)
-                #print('A:',A)
-                #print('B:',B)
-                if B == 0:
-                    Factor_list[f_check] = p_check
-                    Factor_list.append(A)
-                    f_check += 1
-                    break
-                else:
-                    p_check = PrimeNum_Next(p_check)
-    return Factor_list
+  #N까지 소수 목록 구하기
+  PrimeNum_list = Prime(N)
 
+  #소수 목록중 작은 수 부터 N을 나누기
+  idx = 0
+  while N not in PrimeNum_list:
+    # A, B = divmod(N,PrimeNum_list[idx])
+    if N % PrimeNum_list[idx] == 0:
+      N = N / PrimeNum_list[idx]
+      answer_list.append(PrimeNum_list[idx])
+    else:
+      idx += 1
+
+  #나누어진 수는 정답 리스트에 저장
+  answer_list.append(int(N))
+
+  return answer_list
 
 N = int(input())
-
-answer = PrimeFactorization(N)
-for i in answer:
-   print(i)
+if N == 1:
+  pass
+else:
+  #오름차순으로 출력
+  for i in PrimeNumFactorization(N):
+    print(i)

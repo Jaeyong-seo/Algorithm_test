@@ -8,7 +8,7 @@ def solution(N):
             for j in range(i+i,2*N+1,i):
                 check[j] = False
 
-    N보다 크고 2N 보다 작은 범위의 True 갯수 반환
+    #N보다 크고 2N 보다 작은 범위의 True 갯수 반환
     for i in range(N+1,2*N+1):
         if check[i] and i > 1:
             cnt += 1

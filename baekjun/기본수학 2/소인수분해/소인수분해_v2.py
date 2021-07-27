@@ -10,7 +10,7 @@ def Prime(N):
   for i in range(2,len(check)):
     if check[i]:
       answer.append(i)
-
+      
   return answer
 
 
@@ -24,7 +24,6 @@ def PrimeNumFactorization(N):
   #소수 목록중 작은 수 부터 N을 나누기
   idx = 0
   while N not in PrimeNum_list:
-    # A, B = divmod(N,PrimeNum_list[idx])
     if N % PrimeNum_list[idx] == 0:
       N = N / PrimeNum_list[idx]
       answer_list.append(PrimeNum_list[idx])
@@ -33,7 +32,6 @@ def PrimeNumFactorization(N):
 
   #나누어진 수는 정답 리스트에 저장
   answer_list.append(int(N))
-
   return answer_list
 
 N = int(input())

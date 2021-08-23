@@ -7,7 +7,6 @@ def solution(meeting):
 
     for meet in meeting:
         if meet[0] >= now:
-            print(meet)
             now = meet[1]
             cnt +=1
     return cnt

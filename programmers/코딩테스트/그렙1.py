@@ -3,9 +3,9 @@ def solution(arr):
     check = len(arr)
 
     for val in arr:
-        a = 
-        b = 
-        v = abs(a-len(arr) - len([i for i in arr if i > val]))
+        a = len(arr) - len([i for i in arr if i > val])
+        b = len(arr) - a
+        v = abs(a-b)
         
         if v < check:
             check=v
@@ -15,5 +15,5 @@ def solution(arr):
 
 # arr = [1,52,125,10,25,201,244,192,128,23,203,98,154,255]
 # arr = [0,0,255,255,0,0,255,255,255]
-arr = [100,50,100,200]
+arr = [100,100,100]
 print(solution(arr))
